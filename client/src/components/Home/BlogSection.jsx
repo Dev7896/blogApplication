@@ -85,7 +85,7 @@ function BlogSection() {
         id="blog-wrapper"
         className="mt-14 w-full h-max flex flex-col md:flex-row gap-12  flex-wrap "
       >
-        {blogContent?.map((blog, i) => {
+        {blogContent && blogContent?.map((blog, i) => {
           return (
             <Link key={blog._id} to={`/blog/${blog._id}`}>
               <Blog

@@ -185,11 +185,14 @@ const updateBlog = async (req, res) => {
   }
 };
 
-// PATCH /blogs/:id/like
+
 const toggleLike = async (req, res) => {
   try {
     const blogId = req.params.id;
     const { userId } = req.body; // assuming authentication middleware
+    if(!userId){
+      return res.status(400).json({error : true , message  : 'Register your self '})
+    }
 
     const blog = await Blog.findById(blogId);
     if (!blog) {

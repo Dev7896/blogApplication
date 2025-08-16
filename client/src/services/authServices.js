@@ -43,11 +43,11 @@ export async function loginUser(data) {
     if (response.data.error) {
       return {
         error: true,
-        message: result.data.message || "something went wrong",
+        message: response.data.message || "something went wrong",
       };
     }
     if (response.data.success) {
-      toast.success(response.data.message);
+      toast.success(response?.data?.message);
       Cookies.set("token", response.data.token);
     }
 

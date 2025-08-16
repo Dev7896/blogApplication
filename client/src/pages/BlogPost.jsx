@@ -16,6 +16,8 @@ function BlogPost() {
   const [blogPost, setBlogPost] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const [liked  , setLiked] = useState() ;
+
   useEffect(() => {
     if (blogData && blogData.length > 0) {
       function makeBlogPost() {
